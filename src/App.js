@@ -10,6 +10,7 @@ function App() {
         {/* Sidebar */}
         {/* Feed */}
         {/* Widgets */}
+        <h1>Facebook</h1>
       </main>
     </div>
   )
