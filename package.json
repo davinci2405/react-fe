@@ -2,13 +2,14 @@
   "name": "react-fe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://davinci2405.github.io/react-fe",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@heroicons/react": "^1.0.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.1",
@@ -39,7 +40,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://davinci2405.github.io/react-fe",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
