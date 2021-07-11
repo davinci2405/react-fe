@@ -12,43 +12,29 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
-
+        node-version: [14.x]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+       - uses: actions/checkout@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Cache dependencies
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v2
-        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: npm install
+          hugo-version: '0.83.1'
 
       - name: Build
-        run: npm run build
+        run: hugo --minify
 
-      - name: Deploy
-        run: |
-          git config --global user.name "davinci2405"
-          git config --global user.email "duyhp2405@gmail.com"
-          git remote set-url origin https://${github_token}@github.com/${repository}
-          npm run deploy
-        env:
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
+       - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ ssecrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          publish_dir: ./public
+        # env:
+        #   user_name: "github-actions[bot]"
+        #   user_email: "github-actions[bot]@users.noreply.github.com"
+        #   github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        #   repository: ${{ github.repository }}
