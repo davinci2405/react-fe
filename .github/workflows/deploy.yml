@@ -29,12 +29,6 @@ jobs:
 
        - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ ssecrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           publish_dir: ./public
-        # env:
-        #   user_name: "github-actions[bot]"
-        #   user_email: "github-actions[bot]@users.noreply.github.com"
-        #   github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-        #   repository: ${{ github.repository }}
