@@ -13,6 +13,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/outline"
 import { HeaderIcon } from "./HeaderIcon"
+import AvatarIcon from "../../assets/img/avatar.svg"
 
 export const Header = () => {
   return (
@@ -47,6 +48,13 @@ export const Header = () => {
       {/* Right */}
       <div className="flex items-center sm:space-x-2 justify-end">
         {/* Profile picture */}
+        <img
+          src={AvatarIcon}
+          alt=""
+          className="rounded-full cursor-pointer"
+          width={40}
+          height={40}
+        />
         <p className="whitespace-nowrap font-semibold pr-3">Phương Duy</p>
         <ViewGridIcon className="icon" />
         <ChatIcon className="icon" />

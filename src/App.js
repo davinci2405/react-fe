@@ -1,16 +1,16 @@
-import { Header } from "./component/Headers/Header"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { Facebook } from "./pages/Facebook"
 
 function App() {
   return (
     <div className="app">
-      {/* Header */}
-      <Header />
-
-      <main>
-        {/* Sidebar */}
-        {/* Feed */}
-        {/* Widgets */}
-      </main>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/">
+            <Facebook />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   )
 }

@@ -16,6 +16,15 @@ code {
     monospace;
 }
 
+#root {
+  height: 100vh;
+}
+
+img {
+  min-width: auto;
+  height: auto;
+}
+
 @layer components {
   .icon {
     @apply hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-700 cursor-pointer hover:bg-gray-300;
