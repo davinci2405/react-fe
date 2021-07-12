@@ -1,14 +1,20 @@
+import Feed from "../../components/Feed/Feed"
 import { Header } from "../../components/Headers/Header"
+import Sidebar from "../../components/Sidebar/Sidebar"
 
 export const Facebook = () => {
   return (
-    <div>
+    <div className="h-screen bg-gray-100 overflow-hidden">
       {/* Header */}
-      <Header />
+      <header>
+        <Header />
+      </header>
 
-      <main>
+      <main className="flex">
         {/* Sidebar */}
+        <Sidebar />
         {/* Feed */}
+        <Feed />
         {/* Widgets */}
       </main>
     </div>

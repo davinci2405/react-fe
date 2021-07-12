@@ -55,7 +55,9 @@ export const Header = () => {
           width={40}
           height={40}
         />
-        <p className="whitespace-nowrap font-semibold pr-3">Phương Duy</p>
+        <p className="whitespace-nowrap font-semibold pr-3 hidden xl:inline-flex">
+          Phương Duy
+        </p>
         <ViewGridIcon className="icon" />
         <ChatIcon className="icon" />
         <BellIcon className="icon" />
