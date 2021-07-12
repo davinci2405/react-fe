@@ -1,5 +1,4 @@
 import { ChatAltIcon, ShareIcon, ThumbUpIcon } from "@heroicons/react/solid"
-import Husqvarna from "../../assets/img/husqvarna.jpeg"
 import AvatarIcon from "../../assets/img/avatar.svg"
 
 const displayDate = () => {
@@ -23,7 +22,7 @@ function Post() {
           />
           <div>
             <p className="font-medium">My Crush</p>
-            <p className="text-xs text-gray-400">{displayDate() }</p>
+            <p className="text-xs text-gray-400">{displayDate()}</p>
           </div>
         </div>
 
@@ -31,18 +30,13 @@ function Post() {
       </div>
 
       {/* Body of post */}
-      {/* {Husqvarna && (
-        <div className="relative h-56 md:h-96 bg-white">
-          <img
-            className="object-cover"
-            src={Husqvarna}
-            alt=""
-            style={{
-                minHeight: "400px"
-            }}
-          />
-        </div>
-      )} */}
+      {/* <div className="relative h-56 md:h-96 bg-white">
+        <img
+          className="object-cover"
+          src={AvatarIcon}
+          alt=""
+        />
+      </div> */}
 
       {/* Footer of post */}
       <div className="flex justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t">
