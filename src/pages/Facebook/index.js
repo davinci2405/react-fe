@@ -1,6 +1,7 @@
 import Feed from "../../components/Feed/Feed"
 import { Header } from "../../components/Headers/Header"
 import Sidebar from "../../components/Sidebar/Sidebar"
+import Widgets from "../../components/Widgets/Widgets"
 
 export const Facebook = () => {
   return (
@@ -16,6 +17,7 @@ export const Facebook = () => {
         {/* Feed */}
         <Feed />
         {/* Widgets */}
+        <Widgets />
       </main>
     </div>
   )
